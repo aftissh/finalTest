@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace FinalTest.Tests
 {
-    public class Multiplication
+    public class Multiplication : IOperation
     {
         public Boolean PeutCalculer(string s1)
         {

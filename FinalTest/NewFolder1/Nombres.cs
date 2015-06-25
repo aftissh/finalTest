@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,6 +24,17 @@ namespace FinalTest.Tests
             }
         }
 
-
+        public string TexteNombresImpairs
+        {
+            get
+            {
+                var requete = _keyValuePairs.Where(nombre => nombre.Value%2 != 0)
+                    .OrderByDescending(nombre => nombre.Value)
+                    .Select(nombre => nombre.Key)
+                    .Aggregate((workingSentence, next) =>
+                                                  next + ", " + workingSentence);
+                return requete;
+            }
+        }
     }
 }

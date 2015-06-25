@@ -36,5 +36,20 @@ namespace FinalTest.Tests
                 return requete;
             }
         }
+
+        public string PremierNombreDontLeTexteContientPlusDe5Caractères
+        {
+            get
+            {
+                var requete = _keyValuePairs.Where(nombre => nombre.Key.Length>5)
+                    .Select(nombre => nombre.Key)
+                    .First()
+                    //.Aggregate((workingSentence, next) =>
+                       //                           next + ", " + workingSentence)
+                       ;
+                return requete;
+
+            }
+        }
     }
 }

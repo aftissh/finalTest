@@ -48,7 +48,22 @@ namespace FinalTest.Tests
                        //                           next + ", " + workingSentence)
                        ;
                 return requete;
+            }
 
+
+        }
+
+        public IEnumerable<int> QuatreNombresSupérieursSuivant3
+        {
+            get
+            {
+                var requete = _keyValuePairs.Where(nombre => nombre.Value > 3)
+                    .OrderBy(nombre => nombre.Value)
+                    .Skip(0)
+                    .Take(4)
+                    .Select(nombre => nombre.Value);
+                return requete;
+                
             }
         }
     }
